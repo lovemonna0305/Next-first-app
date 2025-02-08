@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
 
 
-  const copyToClipboard = async (text) => {
+  const copyToClipboard = async (text: string) => {
     console.log(text)
     try {
       await navigator.clipboard.writeText(text);
