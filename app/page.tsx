@@ -99,7 +99,7 @@ export default function Home() {
 
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          onClick={() => {(copyToClipboard('copy Text'))}}
+          onClick={() => {copyToClipboard('copy Text')}}
           rel="noopener noreferrer"
         >
           {'copyToClipboard'}
