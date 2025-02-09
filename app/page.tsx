@@ -1,18 +1,24 @@
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
 
+  useEffect(()=>{
+    const copyToClipboard = async (text: string) => {
+      console.log(text)
+      try {
+        await navigator.clipboard.writeText(text);
+        console.log("text clipboard success");
+      } catch (err) {
+        console.log("text clipboard failed");
+        console.error("Failed to copy text: ", err);
+      }
+    };
+    copyToClipboard('copy text')
 
-  const copyToClipboard = async (text: string) => {
-    console.log(text)
-    try {
-      await navigator.clipboard.writeText(text);
-      console.log("text clipboard success");
-    } catch (err) {
-      console.log("text clipboard failed");
-      console.error("Failed to copy text: ", err);
-    }
-  };
+  })
+
+
 
 
 
@@ -96,14 +102,6 @@ export default function Home() {
           Examples
         </a>
 
-
-        <button
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          onClick={() => {copyToClipboard('copy Text')}}
-          rel="noopener noreferrer"
-        >
-          {'copyToClipboard'}
-        </button>
       </footer>
     </div>
   );
