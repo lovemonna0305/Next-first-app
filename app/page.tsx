@@ -1,22 +1,19 @@
 import Image from "next/image";
-import { useEffect } from "react";
 
 export default function Home() {
 
-  useEffect(()=>{
-    const copyToClipboard = async (text: string) => {
-      console.log(text)
-      try {
-        await navigator.clipboard.writeText(text);
-        console.log("text clipboard success");
-      } catch (err) {
-        console.log("text clipboard failed");
-        console.error("Failed to copy text: ", err);
-      }
-    };
-    copyToClipboard('copy text')
+  const copyToClipboard = async (text: string) => {
+    console.log(text)
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log("text clipboard success");
+    } catch (err) {
+      console.log("text clipboard failed");
+      console.error("Failed to copy text: ", err);
+    }
+  };
+  copyToClipboard('copy text')
 
-  })
 
 
   return (
